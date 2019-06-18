@@ -11,9 +11,9 @@ class FlutterImageGallery {
     return version;
   }
 
-  void addImage(String imageFilename) async {
+  Future<bool> addImage(String imageFilename) async {
     print('FlutterImageGallery:addImage $imageFilename');
-    await _channel.invokeMethod(
+    return await _channel.invokeMethod(
       'addImage',
       <String, String>{'imageFilename': imageFilename},
     );

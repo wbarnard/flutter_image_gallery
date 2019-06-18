@@ -37,6 +37,8 @@ public class FlutterImageGalleryPlugin implements MethodCallHandler {
       values.put(MediaStore.MediaColumns.DATA, imageFilename);
 
       registrar.context().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+
+      result.success(true);
     } else {
       result.notImplemented();
     }
